@@ -6,6 +6,7 @@ import { Login } from "@/pages/Login";
 import { Register } from "@/pages/Register";
 import { Dashboard } from "@/pages/Dashboard";
 import { Agenda } from "@/pages/Agenda";
+import { Patients } from "@/pages/Patients";
 
 /** Redireciona usuários autenticados para fora das páginas públicas. */
 function PublicOnly({ children }: { children: React.ReactNode }) {
@@ -43,6 +44,7 @@ export function App() {
       >
         <Route path="/" element={<Dashboard />} />
         <Route path="/agenda" element={<Agenda />} />
+        <Route path="/pacientes" element={<Patients />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
