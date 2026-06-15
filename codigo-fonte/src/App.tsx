@@ -9,8 +9,10 @@ import { Agenda } from "@/pages/Agenda";
 import { Patients } from "@/pages/Patients";
 import { Sessions } from "@/pages/Sessions";
 import { Documents } from "@/pages/Documents";
+import { WorkingHours } from "@/pages/WorkingHours";
+import { Profile } from "@/pages/Profile";
 
-/** Redireciona usuários autenticados para fora das páginas públicas. */
+/** Redirects authenticated users away from the public auth pages. */
 function PublicOnly({ children }: { children: React.ReactNode }) {
   const { currentUser } = useStore();
   if (currentUser) return <Navigate to="/" replace />;
@@ -49,6 +51,8 @@ export function App() {
         <Route path="/pacientes" element={<Patients />} />
         <Route path="/sessoes" element={<Sessions />} />
         <Route path="/documentos" element={<Documents />} />
+        <Route path="/configuracoes/horarios" element={<WorkingHours />} />
+        <Route path="/configuracoes/perfil" element={<Profile />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
